@@ -2,7 +2,14 @@
 <div class="tweets_index">
   <div class="container">
     <% @tweets.each do |tweet| %>
-      <p><%= tweet.content %></p>
+      <div class="tweets_index_item">
+        <div class="tweet_content">
+          <p><%= tweet.content %></p>
+        </div>
+        <div class="tweet_menu">
+          <%= link_to '詳細を確認', tweet_path(tweet.id) %>
+        </div>
+      </div>
     <% end %>
   </div>
 </div>

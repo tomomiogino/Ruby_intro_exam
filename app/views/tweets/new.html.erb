@@ -1,0 +1,8 @@
+<h1>つぶやきを投稿</h1>
+<%= form_with(model: @tweet, lpcal: true) do |form| %>
+  <div class="new_tweet">
+    <%= form.label :content %>
+    <%= form.text_area :content %>
+  </div>
+  <%= form.submit %>
+<% end %>

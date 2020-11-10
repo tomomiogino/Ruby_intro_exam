@@ -7,7 +7,8 @@
           <p><%= tweet.content %></p>
         </div>
         <div class="tweet_menu">
-          <%= link_to '詳細を確認', tweet_path(tweet.id) %>
+          <%= link_to '詳細確認', tweet_path(tweet.id) %>
+          <%= link_to '編集', edit_tweet_path(tweet.id) %>
         </div>
       </div>
     <% end %>

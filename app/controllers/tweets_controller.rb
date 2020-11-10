@@ -1,5 +1,6 @@
 class TweetsController < ApplicationController
   before_action :set_tweet, only: [:show, :edit, :update, :destroy]
+  before_action :set_new_tweet, only: [:create, :confirm]
   def index
     @tweets = Tweet.all.order(created_at: :desc)
   end
@@ -7,7 +8,6 @@ class TweetsController < ApplicationController
     @tweet = Tweet.new
   end
   def create
-    @tweet = Tweet.new(tweet_params)
     if params[:back]
       render :new
     else
@@ -34,7 +34,7 @@ class TweetsController < ApplicationController
     redirect_to tweets_path, notice: "ツイートを削除しました！"
   end
   def confirm
-    @tweet = Tweet.new(tweet_params)
+    render :new if @tweet.invalid?
   end
   private
   def tweet_params
@@ -42,5 +42,8 @@ class TweetsController < ApplicationController
   end
   def set_tweet
     @tweet = Tweet.find(params[:id])
+  end
+  def set_new_tweet
+    @tweet = Tweet.new(tweet_params)
   end
 end

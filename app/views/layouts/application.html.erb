@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
   <head>
     <title>Twitclone</title>
@@ -10,6 +10,23 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <div class="container">
+        <%= link_to "Twitclone", root_path, id: "logo" %>
+        <nav>
+          <ul>
+            <li><%= link_to "Ｍｙツイート一覧", tweets_path %></li>
+            <li><%= link_to "新規ツイート", new_tweet_path %></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="container">
+      <%= yield %>
+    </div>
+    <footer>
+      <p>Twitclone</p>
+      <p>© 2020 T-ogino</p>
+    </footer>
   </body>
-</html>
+</html> -->

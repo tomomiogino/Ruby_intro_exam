@@ -4,29 +4,29 @@
     <title>Twitclone</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
-    <header>
-      <div class="container">
-        <%= link_to "Twitclone", root_path, id: "logo" %>
-        <nav>
-          <ul>
-            <li><%= link_to "Ｍｙツイート一覧", tweets_path %></li>
-            <li><%= link_to "新規ツイート", new_tweet_path %></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
     <div class="container">
-      <%= yield %>
+      <header class="header clearfix">
+        <div class="header_logo">
+          <%= link_to "Twitclone", root_path %>
+        </div>
+        <ul class="header_menu clearfix">
+          <li><%= link_to "Myツイート一覧", tweets_path %></li>
+          <li><%= link_to "新規ツイート", new_tweet_path %></li>
+        </ul>
+      </header>
+      <div class="wrapper clearfix">
+        <%= yield %>
+        <footer class="footer">
+          <div class="footer_inner">
+            <p>Twitclone</p>
+            <p>© 2020 T-ogino</p>
+          </div>
+        </footer>
+      </div>
     </div>
-    <footer>
-      <p>Twitclone</p>
-      <p>© 2020 T-ogino</p>
-    </footer>
   </body>
 </html>

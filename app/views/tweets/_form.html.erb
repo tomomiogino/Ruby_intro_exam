@@ -13,6 +13,8 @@
     <%= form.label :content %>
     <%= form.text_area :content %>
   </div>
-  <%= form.submit %>
+  <%= form.submit "登録する" %>
 <% end %>
-<%= link_to "ツイート一覧画面に戻る", tweets_path %>
+<div class="btn">
+  <%= link_to "ツイート一覧画面に戻る", tweets_path %>
+</div>

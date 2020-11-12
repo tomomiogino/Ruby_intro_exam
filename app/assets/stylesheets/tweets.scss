@@ -1,3 +1,13 @@
-// Place all the styles related to the tweets controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.tweets_index {
+  width: auto;
+  height: auto;
+}
+.tweets_index_item, .tweet_show_item {
+  width: 80%;
+  margin: 0 auto;
+  max-width: 500px;
+  background-color: white;
+}
+.btn {
+  padding: 20px;
+}

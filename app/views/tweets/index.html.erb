@@ -1,19 +1,19 @@
 <h1>Ｍｙツイート一覧</h1>
 <p><%= notice %></p>
 <div class="tweets_index">
-  <div class="container">
-    <% @tweets.each do |tweet| %>
-      <div class="tweets_index_item">
-        <div class="tweet_content">
-          <p><%= tweet.content %></p>
-        </div>
-        <div class="tweet_menu">
-          <%= link_to '詳細確認', tweet_path(tweet.id) %>
-          <%= link_to '編集', edit_tweet_path(tweet.id) %>
-          <%= link_to '削除', tweet_path(tweet.id), method: :delete, data: {confirm: '本当に削除していいですか？'} %>
-        </div>
+  <% @tweets.each do |tweet| %>
+    <div class="tweets_index_item">
+      <div class="tweet_content">
+        <p><%= tweet.content %></p>
       </div>
-    <% end %>
-  </div>
+      <div class="tweet_menu">
+        <%= link_to '詳細確認', tweet_path(tweet.id) %>
+        <%= link_to '編集', edit_tweet_path(tweet.id) %>
+        <%= link_to '削除', tweet_path(tweet.id), method: :delete, data: {confirm: '本当に削除していいですか？'} %>
+      </div>
+    </div>
+  <% end %>
 </div>
-<%= link_to '新しいツイートを投稿する', new_tweet_path %>
+<div class="btn">
+  <%= link_to '新しいツイートを投稿する', new_tweet_path %>
+</div>
